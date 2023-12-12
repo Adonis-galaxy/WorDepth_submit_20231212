@@ -1,0 +1,27 @@
+--mode train
+--model_name 1105_0_stage_2_lr_3e5
+--batch_size 20
+--num_epochs 200
+
+--std_reg 2
+--stage_1_checkpoint_path /media/home/zyzeng/code/wordepth/WordVAE/models/1104_0_con_reg_2_3e5/model_242400
+
+--save_freq_ckpt 10000
+--save_freq_pred 1000
+--log_freq 100
+
+--filenames_file data_splits/nyudepthv2_train_files_with_gt.txt
+--data_path ../nyu_depth_new/sync/
+--gt_path ../nyu_depth_new/sync/
+
+
+--hidden_dim 256
+--weight_decay 0.0
+--adam_eps 1e-3
+--num_threads 6
+--learning_rate 3e-5
+
+
+
+
+

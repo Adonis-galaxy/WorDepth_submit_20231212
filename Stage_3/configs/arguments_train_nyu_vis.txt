@@ -1,0 +1,33 @@
+--mode train
+--model_name 1116_2_vis_stage_1_2
+--pretrain ./swin_large_patch4_window12_384_22k.pth
+--dataset nyu
+--data_path ../nyu_depth_new/sync/
+--gt_path ../nyu_depth_new/sync/
+--filenames_file data_splits/nyudepthv2_train_files_with_gt.txt
+--batch_size 4
+--num_epochs 25
+--learning_rate 1e-5
+--end_learning_rate 1e-5
+--weight_decay 0.0
+--adam_eps 1e-3
+--num_threads 4
+--input_height 480
+--input_width 640
+--max_depth 10
+--do_random_rotate
+--degree 2.5
+--log_directory ./models/
+--dist_url tcp://127.0.0.1:2305
+--checkpoint_path_stage_1 /media/home/zyzeng/code/wordepth/Stage_1/models/1104_0_con_reg_2_3e5/model_242400
+--checkpoint_path_stage_2 /media/home/zyzeng/code/wordepth/Stage_2/models/1105_0_stage_2/model_242400
+--checkpoint_path_stage_3 /media/home/zyzeng/code/wordepth/Stage_3/models/1113_0_sigloss_post_fuse_conv/model-92500-best_rms_0.31865
+--log_freq 100
+--do_online_eval
+--eval_freq 100
+--data_path_eval ../nyu_depth_new/official_splits/test/
+--gt_path_eval ../nyu_depth_new/official_splits/test/
+--filenames_file_eval data_splits/nyudepthv2_test_files_with_gt.txt
+--min_depth_eval 1e-3
+--max_depth_eval 10
+--eigen_crop
